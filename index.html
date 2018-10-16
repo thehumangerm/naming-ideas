@@ -3,7 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <title>Worlds Adrift Survey Form</title>
-<link rel="stylesheet" type="text/css" href="mystyles.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="mystyle.css">
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
+<a href="#" class="sf-back-to-top"><span class="arrow"></span>Top</a>
 <script>
 /* return to top on refresh */
 
@@ -11,25 +13,29 @@
   window.scrollTo(0, 0);
 }
 </script>
+
+ <!–– Scroll up button script -->
+<script>
+var amountScrolled = 300;
+
+$(window).scroll(function() {
+    if ( $(window).scrollTop() > amountScrolled ) {
+        $('a.sf-back-to-top').fadeIn('slow');
+    } else {
+        $('a.sf-back-to-top').fadeOut('slow');
+    }
+});
+
+$('a.sf-back-to-top').click(function() {
+    $('html, body').animate({
+        scrollTop: 0
+    }, 700);
+    return false;
+});
+</script>
 </head>
 
 <body>
-<!–– Scroll up button script -->
-<script>
-$(document).ready(function() {
-  $(window).scroll(function() {
-    if ($(this).scrollTop() > 100) {
-      $("#scroll").fadeIn();
-    } else {
-      $("#scroll").fadeOut();
-    }
-  });
-  $("#scroll").click(function() {
-    $("html, body").animate({ scrollTop: 0 }, 600);
-    return false;
-  });
-});
- </script>
 <center>
 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd0f9-TY4wuzlGJCXdQEe5qVEWX45lpsEoaCloy57HyT6zFLw/viewform?embedded=true" width="640" height="7187" frameborder="0" marginheight="50" marginwidth="0">Loading...</iframe>
 </center>
