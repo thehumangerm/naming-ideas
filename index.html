@@ -2,11 +2,33 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<link rel="stylesheet" type="text/css" href="~/mystyles.css" media="screen" />
 <title>Worlds Adrift Survey Form</title>
 <script>
-window.onbeforeunload = function () {
+
+<!-- return to top on refresh -->
+
+ window.onbeforeunload = function () {
   window.scrollTo(0, 0);
 }
+
+<!-- scoll up button -->
+
+$(document).ready(function(){ 
+    $(window).scroll(function(){ 
+        if ($(this).scrollTop() > 100) { 
+            $('#scroll').fadeIn(); 
+        } else { 
+            $('#scroll').fadeOut(); 
+        } 
+    }); 
+    $('#scroll').click(function(){ 
+        $("html, body").animate({ scrollTop: 0 }, 600); 
+        return false; 
+    }); 
+
+});
+  
 </script> 
 </head>
 
