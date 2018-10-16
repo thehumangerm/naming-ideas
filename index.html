@@ -3,12 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <title>Worlds Adrift Survey Form</title>
-</head>
+
+ $(window).on('beforeunload', function(){
+    $(window).scrollTop(0);
+}); 
+ 
+ </head>
 
 <body>
-  $(document).ready(function(){
-$(this).scrollTop(0);
-});
 <center>
 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd0f9-TY4wuzlGJCXdQEe5qVEWX45lpsEoaCloy57HyT6zFLw/viewform?embedded=true" width="640" height="7187" frameborder="0" marginheight="50" marginwidth="0">Loading...</iframe>
 </center>
