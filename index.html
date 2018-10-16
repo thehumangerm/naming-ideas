@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <title>Worlds Adrift Survey Form</title>
 <script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
-<a href="#" class="sf-back-to-top"><i class=".arrow-up">Top</a>
+<a href="#" class="sf-back-to-top"><span class="arrow">Top</a>
 
  <!--return to top on refresh-->
 <script>
@@ -13,7 +13,7 @@ window.onbeforeunload = function () {
 }
 </script>
 
-<!––scroll up button--> 
+<!--scroll up button-->
 <script>
 var amountScrolled = 300;
 
@@ -81,11 +81,8 @@ a.sf-back-to-top .arrow:before {
     text-align: center;
     display: block;
     vertical-align: middle;
-    transform: rotate(-90deg);
-    -webkit-transform: rotate(-90deg);
-    -moz-transform: rotate(-90deg);
-    -ms-transform: rotate(-90deg);
-    -o-transform: rotate(-90deg);
+    transform: rotate(-135deg);
+    -webkit-transform: rotate(-135deg);
     cursor: pointer;
     margin-left: -4px;
 }
@@ -95,11 +92,6 @@ i {
   border-width: 0 3px 3px 0;
   display: inline-block;
   padding: 3px;
-}
-
-.arrow-up {
-    transform: rotate(-135deg);
-    -webkit-transform: rotate(-135deg);
 }
  
 a:link {
