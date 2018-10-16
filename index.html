@@ -3,7 +3,6 @@
 <head>
 <meta charset="UTF-8">
 <title>Worlds Adrift Survey Form</title>
-<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 <script src=”https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js”></script>
 
  <!--return to top on refresh-->
@@ -15,7 +14,7 @@ window.onbeforeunload = function () {
 
 <!--scroll up button-->
 <script>
-var btn = $("#button");
+var btn = $('#button');
 
 $(window).scroll(function() {
   if ($(window).scrollTop() > 300) {
@@ -83,8 +82,7 @@ btn.on('click', function(e) {
 <center>
 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd0f9-TY4wuzlGJCXdQEe5qVEWX45lpsEoaCloy57HyT6zFLw/viewform?embedded=true" width="640" height="7187" frameborder="0" marginheight="50" marginwidth="0">Loading...</iframe>
 </center>
-<!--<a href="#" class="sf-back-to-top"><span class="arrow i allign="right bottom margin="30"></span>Top</a>
--->
+<a href="#" id="button" class= allign="right bottom margin="30"></span>Top</a>
 <a id="button"></a>
 </body>
 
