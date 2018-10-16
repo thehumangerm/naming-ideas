@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <title>Worlds Adrift Survey Form</title>
-<script src=”https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js”></script>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"></script>
 
  <!--return to top on refresh-->
 <script>
@@ -14,67 +14,91 @@ window.onbeforeunload = function () {
 
 <!--scroll up button-->
 <script>
-jQuery(document).ready(function() {
- var btn = $('#button');
-
+var amountScrolled = 300;
 $(window).scroll(function() {
-  if ($(window).scrollTop() > 300) {
-    btn.addClass('show');
-  } else {
-    btn.removeClass('show');
-  }
+    if ( $(window).scrollTop() > amountScrolled ) {
+        $('a.sf-back-to-top').fadeIn('slow');
+    } else {
+        $('a.sf-back-to-top').fadeOut('slow');
+    }
 });
-
-btn.on('click', function(e) {
-  e.preventDefault();
-  $('html, body').animate({scrollTop:0}, '300');
+$('a.sf-back-to-top').click(function() {
+    $('html, body').animate({
+        scrollTop: 0
+    }, 700);
+    return false;
 });
 </script>
 
 <!--css style-->
 <style>
 /* Style the back-to-top floating button */
-#button {
-  display: inline-block;
-  background-color: #378aad;
-  width: 50px;
-  height: 50px;
-  text-align: center;
-  border-radius: 4px;
-  position: fixed;
-  bottom: 30px;
-  right: 30px;
-  transition: background-color .3s, 
-    opacity .5s, visibility .5s;
-  opacity: 0;
-  visibility: hidden;
-  z-index: 1000;
+.sf-back-to-top {
+    background-color: #50A1CB; /* button color */
+    color: white; /* text/arrow color */ 
+    display: none;
+    z-index: 999;
+    /* float in bottom right corner */
+    /* 20 pixels from edge */
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+    /* size of button is 50 pixels*/
+    width: 50px;
+    height: 50px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box; 
+    /* round button */
+    -webkit-border-radius: 50%;
+    border-radius: 50%;
 }
-#button::after {
-  content: "\f077";
-  font-family: FontAwesome;
-  font-weight: normal;
-  font-style: normal;
-  font-size: 2em;
-  line-height: 50px;
-  color: #fff;
+a.sf-back-to-top {
+    font-weight: 600;
+    letter-spacing: 2px;
+    font-size: 12px;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 1.6;
+    padding-left: 2px;
+    padding-top: 4px;    
 }
-#button:hover {
-  cursor: pointer;
-  background-color: #969696;
-}
-#button:active {
-  background-color: #969696;
-}
-#button.show {
-  opacity: 1;
-  visibility: visible;
+a.sf-back-to-top .arrow:before {
+    content: "\e02d";
+    font-family: 'arial';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 1;
+    speak: none;
+    -webkit-font-smoothing: antialiased;
+    content: "\e02d";
+    text-align: center;
+    display: block;
+    vertical-align: middle;
+    transform: rotate(-90deg);
+    -webkit-transform: rotate(-90deg);
+    cursor: pointer;
+    margin-left: -4px;
 }
  
-@media {
- #button {
-  margin: 30px;
- }
+i {
+  border: solid black;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+}
+ a:link {
+    text-decoration: none;
+}
+a:visited {
+    text-decoration: none;
+}
+a:hover {
+    text-decoration: none;
+}
+a:active {
+    text-decoration: none;
 }
 </style> 
 </head>
@@ -83,8 +107,7 @@ btn.on('click', function(e) {
 <center>
 <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSd0f9-TY4wuzlGJCXdQEe5qVEWX45lpsEoaCloy57HyT6zFLw/viewform?embedded=true" width="640" height="7187" frameborder="0" marginheight="50" marginwidth="0">Loading...</iframe>
 </center>
-<a href="#" id="button" class= allign="right bottom margin="30"></span>Top</a>
-<a id="button"></a>
+<a href="#" class="sf-back-to-top"><span class="arrow i allign="right bottom margin="30"></span>Top</a>
+<script>
 </body>
-
 </html>
